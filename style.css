@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --primary-color: hsl(26, 100%, 55%); /* Orange */
+    --text-color: hsl(219, 9%, 45%); /* Dark Gray */
+    --secondary-text-color: hsl(218, 3%, 51%); /* Gray */
+    --background-color: white; /* White */
+    --border-color: gray; /* Gray */
+    --button-bg-color: hsl(26, 100%, 55%); /* Orange */
+    --button-text-color: rgb(32, 31, 31); /* Dark Gray */
+    --hover-bg-color: rgba(0, 0, 0, 0.05); /* Light Gray */
+    --free-bg-color: black; /* Black */
+    --free-text-color: black; /* White */
+  }
+  
+  .dark-theme {
+    --background-color: #151515; /* Dark Black */
+    --text-color: hsl(219, 9%, 85%); /* Light Gray */
+    --secondary-text-color: hsl(218, 3%, 71%); /* Light Gray */
+    --border-color: hsl(0, 0%, 30%); /* Gray */
+    --button-bg-color: hsl(26, 100%, 65%); /* Light Orange */
+    --button-text-color: white; /* White */
+    --hover-bg-color: rgba(255, 255, 255, 0.1); /* Light Gray */
+    --free-bg-color: white; /* White */
+    --free-text-color: white; /* Black */
+  }
+  
+  
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kumbh Sans", serif;
+    background-color: var(--background-color);
+  }
+  
+  html{
+    background-color: var(--background-color);
+  }
+  body {
+    height: 120vh;
+    width: 100%;
+    padding-top: 2rem;
+    background-color: var(--background-color); /* Using --background-color */
+  }
+  .logosvg{
+   fill:var(--free-text-color)
+  }
+  .Hero-page {
+   
+    max-width: 1200px;
+    margin: 5rem auto 0;
+    
+  
+   
+  }
+  
+  header {
+    background-color: var(--background-color); /* Using --background-color */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.6rem;
+    border-bottom: 0.4px solid var(--border-color); /* Using --border-color */
+  }
+  
+  .Logo-And-Nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+  
+  .Logo-And-Nav img {
+    flex: 1;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--text-color); /* Using --text-color */
+    position: relative;
+  }
+  
+  nav ul li a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color); /* Using --primary-color */
+  }
+  
+  nav ul li {
+    list-style: none;
+  }
+  
+  .Cart-Profile-Theme {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+  }
+  
+  .Cart-Profile-Theme img {
+    width: 28px;
+    cursor: pointer;
+  }
+  
+  .Cart-Profile-Theme img:hover {
+    filter: brightness(1.1);
+    transition: filter 0.3s ease;
+  }
+  
+  .Humburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--button-text-color); /* Using --button-text-color */
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .Humburger-menu:hover {
+    color: var(--primary-color); /* Using --primary-color */
+    background-color: var(--hover-bg-color); /* Using --hover-bg-color */
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background: var(--background-color); /* Using --background-color */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    padding-top: 10px;
+    transition: left 0.3s ease-in-out;
+  }
+  
+  /* Sidebar Active State (Visible) */
+  .sidebar.active {
+    left: 0;
+    display: block;
+  }
+  
+  /* Sidebar List Styles */
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Sidebar List Item Styles */
+  .sidebar ul li {
+    font-size: 18px;
+    margin-left: 1.2rem;
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* Link Styles */
+  .sidebar ul li a {
+    text-decoration: none;
+    color: var(--text-color); /* Using --text-color */
+    transition: color 0.3s ease;
+  }
+  
+  /* Close Button Style */
+  .sidebar button {
+    background: none;
+    margin-bottom: 1.5rem;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--button-text-color); /* Using --button-text-color */
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    margin-left: 1rem;
+  }
+  
+  /* Button Hover Effect */
+  .sidebar button:hover {
+    color: var(--primary-color); /* Using --primary-color */
+    background-color: var(--hover-bg-color); /* Using --hover-bg-color */
+  }
+  
+  .line {
+    color: var(--free-text-color); /* Using --free-text-color */
+  }
+  
+  .Hero-Content {
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 13rem;
+  }
+  
+  .Small-Images img {
+    display: inline-block;
+    width: 80px;
+    border-radius: 10px;
+  }
+  
+  .Small-Images {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .Big-Image img {
+    width: 360px;
+    border-radius: 10px;
+  }
+  
+  p {
+    margin-bottom: 0.7rem;
+  }
+  
+  .p1 {
+    color: var(--secondary-text-color); /* Using --secondary-text-color */
+    font-weight: 400;
+    opacity: 2;
+  }
+  
+  .Hero-Text h2 {
+    font-size: 2.8rem;
+    color: var(--free-bg-color);
+  }
+  
+  .p2 {
+    line-height: 1.2;
+    color: var(--secondary-text-color); /* Using --secondary-text-color */
+    color: var(--free-bg-color);
+  }
+  
+  span {
+    margin-bottom: 0.5rem;
+    color: var(--free-bg-color);
+  }
+  
+  .free {
+    margin-left: 0.3rem;
+    background-color: var(--free-bg-color); /* Using --free-bg-color */
+    color: var(--free-text-color); /* Using --free-text-color */
+    border-radius: 5px;
+    padding: 0.1rem;
+    font-size: 12px;
+  }
+  
+  .Heo-text-Button {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .Heo-text-Button button {
+    background-color: var(--button-bg-color); /* Using --button-bg-color */
+    color: var(--button-text-color); /* Using --button-text-color */
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 1080px) {
+    .Hero-Content {
+      padding: 2rem;
+      gap: 5rem;
+    }
+  
+    .Small-Images img {
+      width: 70px;
+      border-radius: 8px;
+    }
+  
+    .Small-Images {
+      gap: 0.8rem;
+    }
+  
+    .Big-Image img {
+      width: 320px;
+      border-radius: 8px;
+    }
+  
+    .Hero-Text h2 {
+      font-size: 2.4rem;
+    }
+  
+    .p1,
+    .p2 {
+      font-size: 0.95rem;
+    }
+  
+    .free {
+      font-size: 11px;
+      padding: 0.08rem;
+    }
+  
+    .Heo-text-Button {
+      gap: 1rem;
+    }
+  
+    .Heo-text-Button button {
+      padding: 0.4rem 1.8rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 874px) {
+    nav {
+      display: none;
+    }
+  
+    .Humburger-menu {
+      display: block;
+    }
+  
+    .Logo-And-Nav {
+      gap: 0.8rem;
+    }
+  
+    .Logo-And-Nav img {
+      width: 100px;
+    }
+  
+    header {
+      padding: 0rem 0.5rem;
+    }
+  
+    .Hero-Content {
+      padding: 1rem;
+      gap: 3rem;
+    }
+  
+    .Image-Box {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .Small-Images {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+  
+    .Small-Images img {
+      width: 60px;
+      border-radius: 6px;
+    }
+  
+    .Big-Image img {
+      width: 310px;
+      border-radius: 6px;
+    }
+  
+    .Hero-Text h2 {
+      font-size: 2.2rem;
+    }
+  
+    .p1,
+    .p2 {
+      font-size: 0.9rem;
+    }
+  
+    .free {
+      font-size: 10px;
+      padding: 0.05rem;
+    }
+  
+    .Heo-text-Button {
+      gap: 0.8rem;
+    }
+  
+    .Heo-text-Button button {
+      padding: 0.3rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 763px) {
+    .Hero-Content {
+      flex-direction: column;
+    }
+  
+    .Big-Image img {
+      width: 100%;
+      
+    }
+  
+    .Small-Images {
+    
+      width: 100%;
+    }
+  
+    .Hero-Text {
+      width: 100%;
+    }
+  
+    .Hero-Text h2 {
+      font-size: 1.5rem;
+    }
+  
+    .Hero-Text button {
+      font-size: 0.7rem;
+      padding: 0.5rem 1rem;
+    }
+    body {
+        height: 100vh;
+       
+      }
+      .Hero-page {
+   
+        max-width: 1200px;
+        margin: 1rem auto 0;
+        
+      
+       
+      }
+  }
